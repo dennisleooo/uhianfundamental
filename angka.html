@@ -1,0 +1,24 @@
+<html>
+    <script>
+        angka =[]
+        maxInput = ''
+        minInput = ''
+        do {
+            var input = parseInt(prompt('Masukkan angka'))
+            if(!isNaN(input)){
+                angka.push(input)
+                if (minInput==''){
+                    minInput=input
+                }
+                maxInput = maxInput>input?maxInput:input
+                minInput = minInput<input?minInput:input
+            }
+            angka.sort(function(a, b){return a - b})
+        }while(!isNaN(input))
+
+        console.log(angka)
+        console.log('Nilai Tertinggi : ' + maxInput)
+        console.log('Nilai Terendah : ' + minInput)
+        
+    </script>
+</html>
