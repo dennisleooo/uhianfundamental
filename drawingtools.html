@@ -1,0 +1,56 @@
+<html>
+    <p>1. Persegi</p>
+    <p>2. Segitiga siku-siku rata kiri</p>
+    <p>3. Segitiga siku-siku rata kanan</p>
+    <p>Jenis bangunan</p>
+    <p><input type="number" id="jenis"></p>
+    <p>ukuran </p>
+    <p><input type="number" id="ukuran"></p>
+    <p><input type="button" value="lihat" id="lihat" onclick="proses()"> </button></p>
+    <p id="result"></p>
+    <script>
+        const proses =()=>{
+            var ukuran = document.getElementById("ukuran").value
+            var jenis = document.getElementById("jenis").value
+            var result = ''
+            // persegi
+            if (jenis==1){
+                let jumlahBintang = ukuran
+                for (let i=0; i<jumlahBintang; i++){ 
+                    for (let k=0; k<jumlahBintang ;k++){
+                        result += ' *'
+                    }
+                    result += '<br>'
+                }
+            }
+            // siku kiri
+            else if (jenis==2){
+                let jumlahBintang = ukuran
+                for (let i=0; i<jumlahBintang; i++){ 
+                    for (let j=0; j<=i ;j++){
+                        result += ' *'
+                    }
+                    for (let k=jumlahBintang; k<jumlahBintang ;k++){
+                        result += ' *'
+                    }
+                    result += '<br>'
+                }
+            }
+            // siku kanan
+            else if (jenis==3){
+                let jumlahBintang = ukuran
+                for (let i=0; i<jumlahBintang; i++){ 
+                    for (let j=jumlahBintang; j>i ;j--){
+                        result += ' &nbsp '
+                    }
+                    for (let k=0; k<=i ;k++){
+                        result += '*'
+                    }
+                    result += '<br>'
+                }
+            }
+            document.getElementById("result").innerHTML=result
+        }
+        
+    </script>
+</html>
